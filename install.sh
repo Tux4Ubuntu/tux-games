@@ -8,7 +8,7 @@ NC='\033[0m' # No Color
 function install {
     printf "\033c"
     header "TUX GAMES" "$1"
-    echo "This will install the following classic Tux games:"
+    echo "This will install the following classics:"
     echo "  - SuperTux                          (A lot like Super Mario)"
     echo "  - SuperTuxKart                      (A lot like Mario Kart)"
     echo "  - Extreme Tux Racer                 (Help Tux slide down slopes)"
@@ -43,7 +43,7 @@ function install {
 function uninstall { 
     printf "\033c"
     header "TUX GAMES" "$1"
-    echo "This will ask to uninstall the following classic Tux games:"
+    echo "This will uninstall the following games:"
     echo "  - SuperTux                          (A lot like Super Mario)"
     echo "  - SuperTuxKart                      (A lot like Mario Kart)"
     echo "  - ExtremeTuxRacer                   (Help Tux slide down slopes)"
@@ -94,7 +94,7 @@ function header {
     printf '%*s' "$len" | tr ' ' "$ch"
     if [ $STEPCOUNTER = true ]; then
         printf "Step "${LIGHT_GREEN}$2${NC}
-        printf "/7 "
+        printf "/5 "
     fi
     printf "║\n"
     echo "╚══════════════════════════════════════════════════════════════════════════════╝"
@@ -105,7 +105,7 @@ function check_sudo {
     if sudo -n true 2>/dev/null; then 
         :
     else
-        printf "${YELLOW}Oh, TUX will ask below about sudo rights to copy and install everything...${NC}\n\n"
+        printf "Oh, TUX will ask below about sudo rights to copy and install everything...\n\n"
     fi
 }
 
